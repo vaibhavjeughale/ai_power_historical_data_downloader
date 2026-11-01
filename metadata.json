@@ -1,0 +1,6 @@
+{
+  "name": "Market Historical Data Downloader",
+  "description": "Download, preview, and analyze historical OHLC market data for indices, stocks, and commodities in Excel and CSV format with real data provider integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
