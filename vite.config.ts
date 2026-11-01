@@ -1,8 +1,17 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+<<<<<<< HEAD
 import path from 'path';
 import {defineConfig} from 'vite';
 
+=======
+// import path from 'path';
+import {defineConfig} from 'vite';
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+>>>>>>> 5945383 (historical data downloader)
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
