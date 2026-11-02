@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "destination": "/server.ts"
-    },
-    {
-      "src": "/(.*)",
-      "destination": "/dist/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/index.ts"
     }
   ]
 }

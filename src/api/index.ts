@@ -1,0 +1,25 @@
+import { Server } from 'lucide-react';
+import express from 'express';
+import { apiRouter } from '../../server/routes/api.ts'; // Tumchya api.ts cha path
+
+const app = express();
+
+// Middlewares
+app.use(express.json({ limit: '20mb' }));
+app.use(express.urlencoded({ extended: true, limit: '20mb' }));
+
+// CORS headers
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+// Direct mount apiRouter at root because Vercel routes `/api/*` here
+app.use('/', apiRouter);
+
+export default app;
